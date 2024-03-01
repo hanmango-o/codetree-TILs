@@ -36,8 +36,8 @@ int main() {
     }
 
     int temp = Find(arrK[0]);
-    for(int k : arrK) {
-        if(temp == Find(k)) continue;
+    for(int i = 1; i < K; i++) {
+        if(temp == Find(arrK[i])) continue;
         cout << 0;
         return 0;
     }
