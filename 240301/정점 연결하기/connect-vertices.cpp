@@ -1,9 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int N;
 int parent[100001];
+vector<int> vect[100001];
 
 int Find(int tar) {
     if(parent[tar] == tar) return tar;
@@ -31,15 +34,24 @@ int main() {
         cin >> x >> y;
         Union(x, y);
     }
-    int before = 1;
-    for(int i = 2; i <= N; i++) {
-        int pnow = parent[i];
-        if(pnow != parent[before]) {
-            cout << parent[before] << " " << pnow;
-            return 0;
-        }
-        before = i;
+
+    int a = Find(1);
+    int b;
+
+    for(int i = 1; i <= N; i++) {
+        if(Find(i) != a) b = Find(i);
+        vect[Find(i)].push_back(i);
     }
+
+    sort(vect[a].begin(), vect[a].end());
+    sort(vect[b].begin(), vect[b].end());
+    
+    if(vect[a][0] > vect[b][0]) {
+        cout << vect[b][0] << " " <<  vect[a][0];
+    } else {
+                cout << vect[a][0] << " " <<  vect[b][0];
+    }
+    
 
     return 0;
 }
