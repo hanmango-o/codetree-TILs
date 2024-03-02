@@ -38,13 +38,13 @@ int main() {
         cin >> from >> to >> vol;
         vect.push_back(make_tuple(!vol, from ,to));
     }
-    sort(vect.begin(), vect.end(), greater<tuple<int, int, int>>());
+    sort(vect.begin(), vect.end());
     for(int i = 0; i < vect.size(); i++) {
         int vol, from, to;
         tie(vol, from, to) = vect[i];
         if(Find(from) == Find(to)) continue;
         Union(from, to);
-        maxAnswer += vol;
+        minAnswer += vol;
     }
     init();
     for(int i = vect.size() - 1; i >= 0; i--) {
@@ -52,7 +52,7 @@ int main() {
         tie(vol, from, to) = vect[i];
         if(Find(from) == Find(to)) continue;
         Union(from, to);
-        minAnswer += vol;
+        maxAnswer += vol;
     }
     cout << pow(maxAnswer, 2) - pow(minAnswer, 2);
     return 0;
