@@ -34,8 +34,9 @@ int main() {
     for(int i = 1; i <= N; i++) {
         if(Find(i) == Find(A)) continue;
         if(Find(i) == Find(B)) continue;
-        if(--K) {
+        if(K > 0) {
             Union(i, A);
+            K--;
         }
     }
     for(int i = 1; i <= N; i++) {
