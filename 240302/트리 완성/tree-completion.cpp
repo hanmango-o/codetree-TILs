@@ -3,7 +3,7 @@
 using namespace std;
 
 int N, M, answer;
-int parent[100001];
+int parent[100001], DAT[100001];
 
 int Find(int tar) {
     if(parent[tar] == tar) return tar;
@@ -33,11 +33,13 @@ int main() {
         }
         Union(a, b);
     }
-    int target = parent[1];
-    for(int i = 2; i <= N; i++) {
-        if(parent[i] == target) continue;
+    int target = Find(1);
+    DAT[target] = 1;
+
+    for(int i = 1; i <= N; i++) {
+        if(DAT[Find(i)]) continue;
         answer++;
-        target = parent[i];
+        DAT[Find(i)] = true;
     }
     cout << answer;
 
