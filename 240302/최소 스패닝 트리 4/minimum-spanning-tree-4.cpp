@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int N, M, answer;
+int N, M, answer, cnt;
 char type[10001];
 int parent[10001];
 vector<tuple<int, int, int>> vect;
@@ -22,10 +22,12 @@ void Union(int a, int b) {
     int pb = Find(b);
     if(pa == pb) return;
     parent[pb] = pa;
+    cnt--;
 }
 
 int main() {
     cin >> N >> M;
+    cnt = N;
     for(int i = 1; i <= N; i++) {
         parent[i] = i;
         cin >> type[i];
@@ -44,6 +46,6 @@ int main() {
         Union(from, to);
         answer += vol;
     }
-    cout << (answer == 0 ? -1 : answer);
+    cout << (cnt == 1 ? answer : -1);
     return 0;
 }
