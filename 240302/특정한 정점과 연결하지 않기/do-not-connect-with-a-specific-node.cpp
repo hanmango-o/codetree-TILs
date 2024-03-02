@@ -46,7 +46,7 @@ int main() {
 
     for(int i = 0; i < vect.size(); i++) {
         int node, vol;
-        tie(node, vol) = vect[i];
+        tie(vol, node) = vect[i];
 
         if(Find(node) == Find(A)) continue;
         if(Find(node) == Find(B)) continue;
