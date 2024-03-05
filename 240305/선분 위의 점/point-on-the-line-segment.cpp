@@ -6,20 +6,6 @@ using namespace std;
 int N, M;
 long long arr[100000];
 
-int LowerBound(int left, int right, long long target) {
-    int mid = 0, ret = N;
-    while(left <= right) {
-        mid = (left + right) / 2;
-        if(arr[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-            ret = min(ret, mid);
-        }
-    }
-    return ret;
-}
-
 int CustomBound(int left, int right, long long target) {
     int mid = 0, ret = -1;
     while(left <= right) {
@@ -47,7 +33,7 @@ int main() {
         int tempY = CustomBound(0, N - 1, y);
         bool flagX = arr[tempX] == x;
         bool flagY = arr[tempY] == y;
-        int answer = tempY - tempX;
+        long long answer = tempY - tempX;
         if(flagX || flagY) answer++;
         cout << answer << "\n";
     }
