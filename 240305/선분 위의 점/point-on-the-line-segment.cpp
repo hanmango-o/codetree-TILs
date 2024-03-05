@@ -4,9 +4,9 @@
 using namespace std;
 
 int N, M;
-int arr[100000];
+long long arr[100000];
 
-int LowerBound(int left, int right, int target) {
+int LowerBound(int left, int right, long long target) {
     int mid = 0, ret = N;
     while(left <= right) {
         mid = (left + right) / 2;
@@ -20,7 +20,7 @@ int LowerBound(int left, int right, int target) {
     return ret;
 }
 
-int CustomBound(int left, int right, int target) {
+int CustomBound(int left, int right, long long target) {
     int mid = 0, ret = -1;
     while(left <= right) {
         mid = (left + right) / 2;
@@ -40,7 +40,7 @@ int main() {
         cin >> arr[i];
     }
     for(int i = 0; i < M; i++) {
-        int x, y;
+        long long x, y;
         cin >> x >> y;
         int tempX = CustomBound(0, N - 1, x);
         int tempY = CustomBound(0, N - 1, y);
