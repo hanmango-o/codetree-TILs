@@ -18,7 +18,8 @@ long long BS(long long left, long long right) {
         else if(sum < S) left = mid + 1;
         else right = mid - 1;
     }
-    return mid - 1;
+    if(getSum(mid) > S) return mid - 1;
+    return mid;
 }
 
 int main() {
