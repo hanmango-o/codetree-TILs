@@ -44,8 +44,8 @@ int main() {
         cin >> x >> y;
         int tempX = CustomBound(0, N - 1, x);
         int tempY = CustomBound(0, N - 1, y);
-        bool flagX = arr[tempX] != x;
-        bool flagY = arr[tempY] != y;
+        bool flagX = arr[tempX] == x;
+        bool flagY = arr[tempY] == y;
         int answer = tempY - tempX;
         if(flagX || flagY) answer++;
         cout << answer << "\n";
