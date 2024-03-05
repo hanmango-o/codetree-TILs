@@ -46,16 +46,9 @@ int main() {
         int tempY = CustomBound(0, N - 1, y);
         bool flagX = arr[tempX] != x;
         bool flagY = arr[tempY] != y;
-        if(flagX && flagY) {
-            // flagY++;
-        } else if(flagX && !flagY) {
-
-        } else if(!flagX && flagY) {
-
-        } else {
-
-        }
-        cout << tempY - tempX << "\n";
+        int answer = tempY - tempX;
+        if(flagX || flagY) answer++;
+        cout << answer << "\n";
     }
     return 0;
 }
