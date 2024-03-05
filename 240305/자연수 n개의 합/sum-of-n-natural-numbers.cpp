@@ -17,7 +17,7 @@ long long BS(long long left, long long right) {
     while(left <= right) {
         mid = (left + right) / 2;
         int sum = getSum(mid);
-        if(sum == S) break;
+        if(sum == S) return mid;
         else if(sum < S) left = mid + 1;
         else right = mid - 1;
     }
