@@ -4,7 +4,7 @@
 using namespace std;
 
 int N, M;
-int arr[100];
+int arr[100000];
 
 int UpperBound(int left, int right, int target) {
     int mid = 0, ret = N;
