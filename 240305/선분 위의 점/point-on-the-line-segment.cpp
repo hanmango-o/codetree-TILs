@@ -42,9 +42,19 @@ int main() {
     for(int i = 0; i < M; i++) {
         int x, y;
         cin >> x >> y;
-        int tempX = LowerBound(0, N - 1, x);
+        int tempX = CustomBound(0, N - 1, x);
         int tempY = CustomBound(0, N - 1, y);
-        if(arr[tempX] != x) tempX--;
+        bool flagX = arr[tempX] != x;
+        bool flagY = arr[tempY] != y;
+        if(flagX && flagY) {
+            // flagY++;
+        } else if(flagX && !flagY) {
+
+        } else if(!flagX && flagY) {
+
+        } else {
+
+        }
         cout << tempY - tempX << "\n";
     }
     return 0;
