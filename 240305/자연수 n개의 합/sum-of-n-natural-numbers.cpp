@@ -23,6 +23,6 @@ long long BS(long long left, long long right) {
 
 int main() {
     cin >> S;
-    cout << BS(1, S);
+    cout << BS(1, 20000000000);
     return 0;
 }
