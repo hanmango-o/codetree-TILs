@@ -16,7 +16,7 @@ int getCnt(int n) {
 }
 
 int UpperBound(int left, int right) {
-    int mid = 0, ret = -1;
+    int mid = 0, ret = 0;
     while(left <= right) {
         mid = (left + right) / 2;
         // cout << mid << " ";
