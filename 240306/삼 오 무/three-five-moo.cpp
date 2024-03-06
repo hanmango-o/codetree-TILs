@@ -26,6 +26,7 @@ long long BS(long long left, long long right) {
 
 int main() {
     cin >> N;
-    cout << BS(1, INT_MAX);
+    long long temp = BS(1, INT_MAX);
+    cout << (temp % 3 == 0 || temp % 5 == 0 ? temp + 1 : temp);
     return 0;
 }
