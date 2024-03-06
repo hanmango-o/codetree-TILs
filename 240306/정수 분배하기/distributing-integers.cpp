@@ -38,7 +38,7 @@ int main() {
         cin >> arr[i];
         if(MIN > arr[i]) MIN = arr[i];
     }
-    cout << UpperBound(1, MIN);
+    cout << UpperBound(1, 100000);
 
 
     return 0;
