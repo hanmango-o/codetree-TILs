@@ -11,11 +11,14 @@ long long getCnt(long long n) {
 }
 
 long long BS(long long left, long long right) {
-    long long mid = 0;
+    long long mid = 0, ret = INT_MAX;
     while(left <= right) {
         mid = (left + right) / 2;
-        if(getCnt(mid) == N) return mid;
-        else if(getCnt(mid) < N) left = mid + 1;
+        if(getCnt(mid) < N) {
+            left = mid + 1;
+            ret = min(ret, mid);
+        }
+        // else if(getCnt(mid) < N) left = mid + 1;
         else right = mid - 1;
     }
     return mid;
